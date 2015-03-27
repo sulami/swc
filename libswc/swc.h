@@ -227,6 +227,14 @@ void swc_window_set_size(struct swc_window * window,
                          uint32_t width, uint32_t height);
 
 /**
+ * Get a window's geometry.
+ *
+ * Useful for relative resize/movement actions. Caution:
+ * swc_window_set_geometry() does not flush!
+ */
+struct swc_rectangle * swc_window_get_geometry(struct swc_window * base);
+
+/**
  * Set the window's size and position.
  *
  * This is a convenience function that is equivalent to calling

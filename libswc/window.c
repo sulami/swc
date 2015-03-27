@@ -257,6 +257,15 @@ void swc_window_set_size(struct swc_window * base,
 }
 
 EXPORT
+struct swc_rectangle * swc_window_get_geometry(struct swc_window * base)
+{
+    struct window * window = INTERNAL(base);
+    struct swc_rectangle * geometry = &window->view->base.geometry;
+
+    return geometry;
+}
+
+EXPORT
 void swc_window_set_geometry(struct swc_window * window,
                              const struct swc_rectangle * geometry)
 {
